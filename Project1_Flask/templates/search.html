@@ -6,13 +6,12 @@
 </head>
 <body>
 <h3>Project 2</h3>
-<!-- <p class="lead mb-5">Disclaimer: Do not rely on openFDA to make decisions regarding medical care. Always speak to your health provider about the risks and benefits of FDA-regulated products. We may limit or otherwise restrict your access to the API in line with our <a href="https://open.fda.gov/terms/">Terms of Service</a></p> -->
     <h1 class="center_header">Search for book lists with NY Times API</h1>
 
     <div class="search_form_style">
         <form method="POST" action="{{url_for('search')}}">
-{#            {{form.csrf}}#}
-{#            {{form.hidden_tag()}}#}
+            {#{{form.csrf}}#}
+            {#{{form.hidden_tag()}}#}
 
             <label>Select a genre of books to find a list for:</label><br>
             {{ form.genre_list_input }}
