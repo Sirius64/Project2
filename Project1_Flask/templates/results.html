@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 2: New York Times API</title>
+</head>
+<body>
+
+<h2>Project 2<br> </h2>
+
+    <h1>Search results for {{results["results"]["list_name"]}} with NY Times API</h1>
+
+    <table border="5">
+        <tr>
+            <th>Rank</th> <th>Title</th> <th>Author</th> <th>Publisher</th> <th>ISBN 10</th>
+        </tr>
+
+        {% for i in results["results"]["books"] %}
+        <tr>
+            <td>{{i["rank"]}}</td>
+            <td>{{i["title"]}}</td>
+            <td>{{i["author"]}}</td>
+            <td>{{i["publisher"]}}</td>
+            <td>{{i["isbns"][0]["isbn10"]}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    <br>
+<a href="{{url_for('search')}}">New Search</a>
+</body>
+</html>
